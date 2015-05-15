@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="page-header"><%= @devotional.title %>
+                <small>Día: <%= @devotional.day.to_s %></small>
+            </h1>
+        </div>
+
+        <div class="col-lg-4 right">
+            <h3 class="page-header">
+                <a href="<%= all_days_url %>">HablandoConDios.com</a>
+            </h3>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <% if @devotional.image.url.nil? %>
+                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            <% else %>
+                <%= image_tag @devotional.image.url, :class => 'img-responsive' %>
+            <% end %>
+            <br />
+            <%= link_to 'Descargar PDF', download_devotional_path(@devotional, :format => 'pdf'), :class => 'btn btn-success' %>
+        </div>
+
+        <div class="col-md-5">
+            <h3><%= @devotional.passage %></h3>
+            <p>
+                <i><%= @devotional.passage_text %></i>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+    	<div class="col-md-12">
+            <h3>Historia</h3>
+            <p>
+            	<%= @devotional.story %>
+            </p>
+
+            <h3>Preguntas</h3>
+            <p>
+            	<%= @devotional.questions %>
+            </p>
+
+            <h3>Pasaje a memorizar</h3>
+            <p>
+            	<blockquote><%= @devotional.passage_mem %></blockquote>
+            </p>
+    	</div>
+    </div>
+
+    <div class="row center">
+        <div class="col-md-12">
+            <i><%= @devotional.quote %></i>
+        </div>
+    </div>
+
+<!--     <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">Otros devocionales</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="#">
+                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+    </div> -->
+
+    <hr>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; hablandocondios.com <%= Time.now.year %></p>
+            </div>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Devocional</title>
+</head>
+
+<body>
+	<div>
+		<h1><%= @devotional.title %></h1>
+	</div>
+
+	<div>
+		<h3><%= @devotional.passage %></h3>
+		<p>
+			<%= @devotional.passage_text %>
+		</p>
+	</div>
+
+	<div>
+		<h3>Historia</h3>
+		<p>	
+			<%= @devotional.story %>
+		</p>
+	</div>
+
+	<div>
+		<h3>Preguntas</h3>
+		<p>	
+			<%= @devotional.questions %>
+		</p>
+	</div>
+
+	<div>
+		<h3>Pasaje a memorizar</h3>
+		<p>	
+			<%= @devotional.passage_mem %>
+		</p>
+		<br><br>
+		<p>	
+			<%= @devotional.quote %>
+		</p>
+	</div>
+</body>
+</html>

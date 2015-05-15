@@ -1,0 +1,17 @@
+<ul class="nav navbar-nav left">
+   <% if user_signed_in? %>
+      <%= menu_link '/devotionals', t('devotionals') %>
+
+      <% if is_admin %>
+          <%= menu_link '/users', t('users') %>
+      <% end %>
+
+      <li>
+          <%= link_to t('profile'), edit_user_registration_path %>
+      </li>
+      
+      <li>
+          <%= link_to t('logout'), destroy_user_session_path, method: :delete %>
+      </li>
+   <% end %>
+</ul>

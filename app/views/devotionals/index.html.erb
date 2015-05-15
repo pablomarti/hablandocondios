@@ -1,0 +1,28 @@
+<h1><%= t('devotionals') %></h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Day</th>
+      <th>Passage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devotionals.each do |devotional| %>
+      <tr>
+        <td><%= devotional.title %></td>
+        <td><%= devotional.day %></td>
+        <td><%= devotional.passage %></td>
+        <td><%= link_to t('edit'), edit_devotional_path(devotional) %></td>
+        <td><%= link_to t('remove'), devotional, method: :delete, data: { confirm: t('are_you_sure_to_remove_the_dev') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new_devotional'), new_devotional_path, :class => "btn btn-default" %>

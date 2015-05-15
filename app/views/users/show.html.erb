@@ -1,0 +1,86 @@
+<h1>User</h1>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Country</th>
+      <td><%= @user.country.name %></td>
+    </tr>
+    <tr>
+      <th>Level</th>
+      <td><%= @user.level.name %></td>
+    </tr>
+    <tr>
+      <th>First name</th>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last name</th>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= link_to @user.email, "mailto:#{@user.email}" %></td>
+    </tr>
+    <tr>
+      <th>Birthdate</th>
+      <td><%= @user.birthdate %></td>
+    </tr>
+    <tr>
+      <th>Phone number 1</th>
+      <td><%= @user.phone_number1 %></td>
+    </tr>
+    <tr>
+      <th>Phone number 2</th>
+      <td><%= @user.phone_number2 %></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td><%= @user.address %></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td><%= get_gender @user.gender %></td>
+    </tr>
+    <tr>
+      <th>Active</th>
+      <td><%= item_active @user.active %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<hr />
+
+<div>
+  <%= form_for :data, :url => add_curriculum_user_path(@user), :remote => true do |f| %>
+    <div class="field form-group">
+      <%= f.select :curriculum_id, Curriculum.all.collect{ |c| [c.full_name, c.id] }, {}, :class => 'form-control' %>
+    </div>
+
+    <div class="actions right">
+      <%= f.submit 'Add', :class => "btn btn-default" %>
+    </div>
+  <% end %>
+</div>
+
+<hr />
+
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <th>Career</th>
+      <th>Curriculum</th>
+      <th colspan="2"></th>
+    </thead>
+    <tbody id="all_curriculums">
+      <%= render :partial => "curriculum", :collection => @curriculums %>
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+<%= link_to 'Back', users_path, :class => "btn btn-default" %>
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-default" %>

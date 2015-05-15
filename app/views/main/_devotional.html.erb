@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-7">
+        <a href="<%= today_url(devotional) %>">
+            <% if devotional.image.url.nil? %>
+                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            <% else %>
+                <%= image_tag devotional.image.url, :class => 'img-responsive' %>
+            <% end %>
+        </a>
+    </div>
+    <div class="col-md-5">
+        <h3><%= devotional.title %></h3>
+        <h4><%= devotional.passage %></h4>
+        <p><%= truncate devotional.story, :length => 430 %></p>
+        <a class="btn btn-primary" href="<%= today_url(devotional) %>">Ir al devocional <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>

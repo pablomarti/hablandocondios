@@ -1,0 +1,54 @@
+<%= form_for @devotional, :html => {:multipart => true} do |f| %>
+  <% if @devotional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@devotional.errors.count, "error") %> prohibited this devotional from being saved:</h2>
+
+      <ul>
+      <% @devotional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :title, t('title') %><br>
+    <%= f.text_field :title, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :day, t('day') %><br>
+    <%= f.number_field :day, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :passage, t('passage') %><br>
+    <%= f.text_field :passage, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :passage_text, t('passage_text') %><br>
+    <%= f.text_area :passage_text, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :story, t('story') %><br>
+    <%= f.text_area :story, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :questions, t('questions') %><br>
+    <%= f.text_area :questions, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :passage_mem, t('passage_mem') %><br>
+    <%= f.text_field :passage_mem, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :quote, t('quote') %><br>
+    <%= f.text_field :quote, :class => 'form-control', :required => true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :image, t('image_name') %><br>
+    <%= f.file_field :image, :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= link_to t('back'), devotionals_path, :class => "btn btn-default" %>
+    <%= f.submit t('save'), :class => "btn btn-success" %>
+  </div>
+<% end %>

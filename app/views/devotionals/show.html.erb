@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @devotional.title %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @devotional.day %>
+</p>
+
+<p>
+  <strong>Passage:</strong>
+  <%= @devotional.passage %>
+</p>
+
+<p>
+  <strong>Passage text:</strong>
+  <%= @devotional.passage_text %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @devotional.story %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @devotional.questions %>
+</p>
+
+<p>
+  <strong>Passage mem:</strong>
+  <%= @devotional.passage_mem %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @devotional.quote %>
+</p>
+
+<%= link_to 'Edit', edit_devotional_path(@devotional) %> |
+<%= link_to 'Back', devotionals_path %>
