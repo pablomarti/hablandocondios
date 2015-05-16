@@ -259,4 +259,6 @@ Devise.setup do |config|
   
   config.omniauth :facebook, "1602092676743896", "7f45ab56b393a18712d14f494ae58ee9", :scope => 'email, user_birthday'
 
+  config.secret_key = '215fc422d4b02123b4c659037cd45b0512684bdf1659370957a4b19f86354de9915209fac7dcf342839bbfb1b939daa8fc06f72f83476c46e0bdd51ae8837075'
+
 end
