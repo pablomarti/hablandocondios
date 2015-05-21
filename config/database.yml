@@ -51,6 +51,6 @@ test:
 production:
   <<: *default
   database: child_devotionals_production
-  username: hablandocondios
-  password: welcomeT124
+  username: rails
+  password: XuUJqk6p7y
   socket: /var/run/mysqld/mysqld.sock
