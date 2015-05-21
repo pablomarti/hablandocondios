@@ -41,6 +41,10 @@ class MainController < ApplicationController
   			@devotional = Devotional.where('day>?', day).order('id ASC').first rescue Devotional.last
   		end
   	end
+
+    if @devotional.nil?
+      @devotional = Devotional.last
+    end
   end
 
   def download_devotional
