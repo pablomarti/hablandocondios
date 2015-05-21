@@ -17,10 +17,9 @@ default: &default
 
 development:
   <<: *default
-  database: child_devotionals_production
-  username: rails
-  password: XuUJqk6p7y
-  socket: /var/run/mysqld/mysqld.sock
+  database: child_devotionals_development
+  socket: /tmp/mysql.sock
+  password: welcome123
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -52,6 +51,6 @@ test:
 production:
   <<: *default
   database: child_devotionals_production
-  username: rails
-  password: XuUJqk6p7y
+  username: root
+  password: 316Futuro
   socket: /var/run/mysqld/mysqld.sock
