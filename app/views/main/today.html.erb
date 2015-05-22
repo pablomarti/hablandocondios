@@ -33,7 +33,7 @@
         <div class="col-md-5">
             <h3><%= @devotional.passage %></h3>
             <p>
-                <i><%= @devotional.passage_text %></i>
+                <i><%= format_to_br(@devotional.passage_text) %></i>
             </p>
         </div>
     </div>
@@ -47,7 +47,7 @@
 
             <h3>Preguntas</h3>
             <p>
-            	<%= @devotional.questions %>
+            	<%= format_to_br(@devotional.questions) %>
             </p>
 
             <h3>Pasaje a memorizar</h3>
