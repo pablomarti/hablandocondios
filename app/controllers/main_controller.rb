@@ -27,7 +27,7 @@ class MainController < ApplicationController
   end
 
   def today
-  	start_date = Date.new(2015, 5, 18)
+  	start_date = Date.new(2015, 5, 21)
 
   	if !params[:id].nil?
   		@devotional = Devotional.find(params[:id])
