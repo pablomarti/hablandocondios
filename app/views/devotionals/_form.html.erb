@@ -47,6 +47,14 @@
     <%= f.label :image, t('image_name') %><br>
     <%= f.file_field :image, :class => 'form-control' %>
   </div>
+  <div class="field form-group">
+    <%= f.label :file, t('file_name') %><br>
+    <%= f.file_field :file, :class => 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :credits, t('credits') %><br>
+    <%= f.text_field :credits, :class => 'form-control', :required => true %>
+  </div>
   <div class="actions">
     <%= link_to t('back'), devotionals_path, :class => "btn btn-default" %>
     <%= f.submit t('save'), :class => "btn btn-success" %>

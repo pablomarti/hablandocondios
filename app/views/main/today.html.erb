@@ -22,7 +22,12 @@
                 <%= image_tag @devotional.image.url, :class => 'img-responsive' %>
             <% end %>
             <br />
-            <%= link_to 'Descargar PDF', download_devotional_path(@devotional, :format => 'pdf'), :class => 'btn btn-success' %>
+
+            <% if @devotional.file.url.nil? %>
+                <%= link_to 'Descargar PDF', download_devotional_path(@devotional, :format => 'pdf'), :class => 'btn btn-success' %>
+            <% else %>
+                <%= link_to 'Descargar Documento', @devotional.file.url, :class => 'btn btn-success' %>
+            <% end %>
         </div>
 
         <div class="col-md-5">
