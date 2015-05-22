@@ -17,3 +17,4 @@ es:
   are_you_sure_to_remove_the_dev: '¿Esta seguro de querer eliminar este devocional?'
   image_name: 'Imagen (700x300)'
   file_name: 'Archivo (.pdf, .doc, .docx)'
+  credits: 'Creditos'
