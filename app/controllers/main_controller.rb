@@ -10,7 +10,7 @@ class MainController < ApplicationController
       offset = total_per_page * (@page - 1)
     end
 
-  	@devotionals = Devotional.order("id DESC").limit(total_per_page).offset(offset)
+  	@devotionals = Devotional.order("id ASC").limit(total_per_page).offset(offset)
     @total_pages = Devotional.count / total_per_page
 
     if @page > 0

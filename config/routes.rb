@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   
   resources :devotionals, :except => [:show]
 
-  root 'main#today'
+  root 'main#all_days'
 
 end
