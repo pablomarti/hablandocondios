@@ -9,12 +9,32 @@
 		<h1><%= @devotional.title %></h1>
 	</div>
 
-	<div>
-		<h3><%= @devotional.passage %></h3>
-		<p>
-			<%= format_to_br(@devotional.passage_text) %>
-		</p>
-	</div>
+	<% if !@devotional.image.url.nil? %>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<%= image_tag @devotional.image.url, :class => 'img-responsive' %>
+					</td>
+					<td>
+						<div>
+							<h3><%= @devotional.passage %></h3>
+							<p>
+								<%= format_to_br(@devotional.passage_text) %>
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<% else %>
+		<div>
+			<h3><%= @devotional.passage %></h3>
+			<p>
+				<%= format_to_br(@devotional.passage_text) %>
+			</p>
+		</div>
+	<% end %>
 
 	<div>
 		<h3>Historia</h3>
