@@ -21,10 +21,15 @@
 					</td>
 					<td style="vertical-align:top;">
 						<div>
-							<h3><%= @devotional.passage %></h3>
-							<p>
-								<%= format_to_br(@devotional.passage_text) %>
-							</p>
+							<% if !@devotional.passage.nil? && @devotional.passage.strip != "" %>
+								<h3><%= @devotional.passage %></h3>
+							<% end %>
+
+							<% if !@devotional.passage_text.nil? && @devotional.passage_text.strip != "" %>
+								<p>
+									<%= format_to_br(@devotional.passage_text) %>
+								</p>
+							<% end %>
 						</div>
 					</td>
 				</tr>
@@ -32,10 +37,15 @@
 		</div>
 	<% else %>
 		<div>
-			<h3><%= @devotional.passage %></h3>
-			<p>
-				<%= format_to_br(@devotional.passage_text) %>
-			</p>
+			<% if !@devotional.passage.nil? && @devotional.passage.strip != "" %>
+				<h3><%= @devotional.passage %></h3>
+			<% end %>
+
+			<% if !@devotional.passage_text.nil? && @devotional.passage_text.strip != "" %>
+				<p>
+					<%= format_to_br(@devotional.passage_text) %>
+				</p>
+			<% end %>
 		</div>
 	<% end %>
 
@@ -46,22 +56,29 @@
 		</p>
 	</div>
 
-	<div>
-		<h3>Preguntas</h3>
-		<p>	
-			<%= format_to_br(@devotional.questions) %>
-		</p>
-	</div>
+	<% if !@devotional.questions.nil? && @devotional.questions.strip != "" %>
+		<div>
+			<h3>Preguntas</h3>
+			<p>	
+				<%= format_to_br(@devotional.questions) %>
+			</p>
+		</div>
+	<% end %>
 
 	<div>
-		<h3>Pasaje a memorizar</h3>
-		<p>	
-			<%= @devotional.passage_mem %>
-		</p>
-		<br>
-		<p>	
-			<%= @devotional.quote %>
-		</p>
+		<% if !@devotional.passage_mem.nil? && @devotional.passage_mem.strip != "" %>
+			<h3>Pasaje a memorizar</h3>
+			<p>	
+				<%= @devotional.passage_mem %>
+			</p>
+			<br>
+		<% end %>
+
+		<% if !@devotional.quote.nil? && @devotional.quote.strip != "" %>
+			<p>	
+				<%= @devotional.quote %>
+			</p>
+		<% end %>
 	</div>
 </body>
 </html>

@@ -71,6 +71,6 @@ class DevotionalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def devotional_params
-      params.require(:devotional).permit(:title, :day, :passage, :passage_text, :story, :questions, :passage_mem, :quote, :image, :file, :credits)
+      params.require(:devotional).permit(:title, :day, :passage, :passage_text, :story, :questions, :passage_mem, :quote, :image, :file, :credits, :brief)
     end
 end

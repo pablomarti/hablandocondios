@@ -18,3 +18,4 @@ en:
   image_name: 'Imagen (700x300)'
   file_name: 'Archivo (.pdf, .doc, .docx)'
   credits: 'Creditos'
+  brief: 'Breve descripción'

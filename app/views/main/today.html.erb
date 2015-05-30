@@ -30,12 +30,14 @@
             <% end %>
         </div>
 
-        <div class="col-md-5">
-            <h3><%= @devotional.passage %></h3>
-            <p>
-                <i><%= format_to_br(@devotional.passage_text) %></i>
-            </p>
-        </div>
+        <% if !@devotional.passage_text.nil? && @devotional.passage_text.strip != "" %>
+            <div class="col-md-5">
+                <h3><%= @devotional.passage %></h3>
+                <p>
+                    <i><%= format_to_br(@devotional.passage_text) %></i>
+                </p>
+            </div>
+        <% end %>
     </div>
 
     <div class="row">
@@ -45,25 +47,31 @@
             	<%= format_to_br(@devotional.story) %>
             </p>
 
-            <h3>Preguntas</h3>
-            <p>
-            	<%= format_to_br(@devotional.questions) %>
-            </p>
+            <% if !@devotional.questions.nil? && @devotional.questions.strip != "" %>
+                <h3>Preguntas</h3>
+                <p>
+                	<%= format_to_br(@devotional.questions) %>
+                </p>
+            <% end %>
 
-            <h3>Pasaje a memorizar</h3>
-            <p>
-            	<blockquote><%= @devotional.passage_mem %></blockquote>
-            </p>
+            <% if !@devotional.passage_mem.nil? && @devotional.passage_mem.strip != "" %>
+                <h3>Pasaje a memorizar</h3>
+                <p>
+                	<blockquote><%= @devotional.passage_mem %></blockquote>
+                </p>
+            <% end %>
     	</div>
     </div>
 
-    <div class="row center">
-        <div class="col-md-12">
-            <i><%= @devotional.quote %></i>
+    <% if !@devotional.quote.nil? && @devotional.quote.strip != "" %>
+        <div class="row center">
+            <div class="col-md-12">
+                <i><%= @devotional.quote %></i>
+            </div>
         </div>
-    </div>
+    <% end %>
 
-    <% if !@devotional.credits.nil? && @devotional.credits != "" %>
+    <% if !@devotional.credits.nil? && @devotional.credits.strip != "" %>
         <hr />
 
         <div class="row center">
