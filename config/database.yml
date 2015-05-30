@@ -17,7 +17,7 @@ default: &default
 
 development:
   <<: *default
-  database: child_devotionals_development
+  database: child_devotionals_production
   socket: /var/run/mysqld/mysqld.sock
   password: 316Futuro
 
