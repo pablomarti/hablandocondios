@@ -19,7 +19,7 @@ development:
   <<: *default
   database: child_devotionals_development
   socket: /var/run/mysqld/mysqld.sock
-  password: welcome123
+  password: 316Futuro
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
