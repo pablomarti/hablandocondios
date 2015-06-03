@@ -13,7 +13,7 @@
         <h4><%= "Día: " + devotional.day.to_s %></h4>
         <h5><%= devotional.passage %></h5>
 
-        <% if !devotional.brief.nil? && devotional.strip.brief != "" %>
+        <% if !devotional.brief.nil? && devotional.brief.strip != "" %>
             <p><%= devotional.brief %></p>
         <% else %>
             <p><%= truncate devotional.story, :length => 430 %></p>
