@@ -4,7 +4,7 @@ class DevotionalsController < ApplicationController
   # GET /devotionals
   # GET /devotionals.json
   def index
-    @devotionals = Devotional.all.order("id DESC")
+    @devotionals = Devotional.all
   end
 
   # GET /devotionals/1
