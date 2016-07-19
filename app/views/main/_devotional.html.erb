@@ -2,9 +2,9 @@
     <div class="col-md-7 center">
         <a href="<%= today_url(devotional) %>">
             <% if devotional.image.url.nil? %>
-                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                <img class="img-responsive img_center" src="http://placehold.it/700x300" alt="">
             <% else %>
-                <%= image_tag devotional.image.url, :class => 'img-responsive' %>
+                <%= image_tag devotional.image.url, :class => 'img-responsive img_center' %>
             <% end %>
         </a>
     </div>

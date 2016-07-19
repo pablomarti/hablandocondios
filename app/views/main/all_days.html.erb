@@ -1,22 +1,24 @@
+<%= render :partial => 'header' %>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Hablando con Dios
-                <small>Un proyecto de <%= link_to "Ministerios Infantiles Iglesia Bautista Vida Nueva", 'https://www.facebook.com/pages/Ministerios-Infantiles-Iglesia-Bautista-Vida-Nueva/149171741803159?fref=ts', :target => '_BLANK' %></small>
-            </h1>
-        </div>
-    </div>
-
     <%= render :partial => 'devotional', :collection => @devotionals %>
 
     <!-- Pagination -->
     <div class="row text-center">
         <div class="col-lg-12">
             <ul class="pagination">
-                <% for i in 1..@total_pages %>
-                    <li class="<%= @page == i ? 'active' : '' %>">
-                        <a href="?page=<%= i %>"><%= i %></a>
+              <%
+                total_pages = @total_pages
+                i = 1
+
+                if total_pages > 5
+                  total_pages = @page + 5 < @total_pages ? @page + 5 : @total_pages
+                  i = @page > 5 ? @page - 4 : 1
+                end
+              %>
+                <% for value in i..total_pages %>
+                    <li class="<%= @page == value ? 'active' : '' %>">
+                        <a href="?page=<%= value %>"><%= value %></a>
                     </li>
                 <% end %>
             </ul>
@@ -25,13 +27,6 @@
     <!-- /.row -->
 
     <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; hablandocondios.com <%= Time.now.year %></p>
-            </div>
-        </div>
-    </footer>
 </div>
+
+<%= render :partial => 'footer' %>
